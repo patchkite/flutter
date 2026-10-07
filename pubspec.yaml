@@ -1,0 +1,28 @@
+name: patchkite
+description: "Self-hosted OTA code updates for Flutter apps on Android with Patchkite. On iOS the plugin is a no-op, since Apple forbids loading new AOT code."
+version: 1.0.0
+homepage: https://github.com/patchkite/flutter
+repository: https://github.com/patchkite/flutter
+issue_tracker: https://github.com/patchkite/flutter/issues
+
+environment:
+  sdk: ^3.9.2
+  flutter: '>=3.35.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  plugin:
+    platforms:
+      android:
+        package: io.github.patchkite.flutter
+        pluginClass: PatchkitePlugin
+      ios:
+        pluginClass: PatchkitePlugin
