@@ -20,7 +20,9 @@ jobs:
       - run: flutter pub get
       - run: flutter analyze
       - run: flutter test
-      - run: dart pub publish --dry-run
+      # Newer Flutter versions may migrate files during the steps above; show what changed.
+      - run: git diff
+      - run: git checkout -- . && dart pub publish --dry-run
 
   android:
     runs-on: ubuntu-latest
