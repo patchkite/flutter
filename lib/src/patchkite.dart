@@ -54,7 +54,7 @@ class RemotePackage extends PatchkitePackage {
         'isDiff': isDiff,
       });
       unawaited(AcquisitionClient(_config, deploymentKey).reportDownload(label).catchError((_) {}));
-      return LocalPackage._fromMap(raw!);
+      return await LocalPackage._fromMap(raw!);
     } finally {
       await sub?.cancel();
     }

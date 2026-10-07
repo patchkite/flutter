@@ -20,7 +20,8 @@ jobs:
         with:
           channel: stable
       - name: Check tag matches pubspec version
-        run: test "v$(sed -n 's/^version: *//p' pubspec.yaml)" = "$GITHUB_REF_NAME"
+        run: |
+          test "v$(sed -n 's/^version: *//p' pubspec.yaml)" = "$GITHUB_REF_NAME"
       - run: flutter pub get
       - run: flutter test
       - run: flutter pub publish --force
