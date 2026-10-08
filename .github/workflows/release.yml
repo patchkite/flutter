@@ -24,7 +24,16 @@ jobs:
           test "v$(sed -n 's/^version: *//p' pubspec.yaml)" = "$GITHUB_REF_NAME"
       - run: flutter pub get
       - run: flutter test
+      - name: Check whether this version is already on pub.dev
+        id: pub
+        run: |
+          VERSION=$(sed -n 's/^version: *//p' pubspec.yaml)
+          if curl -fsS "https://pub.dev/api/packages/patchkite/versions/$VERSION" >/dev/null 2>&1; then
+            echo "Version already published, skipping pub publish"
+            echo "published=true" >> "$GITHUB_OUTPUT"
+          fi
       - run: flutter pub publish --force
+        if: steps.pub.outputs.published != 'true'
       - uses: softprops/action-gh-release@v3
         with:
           generate_release_notes: true
