@@ -9,9 +9,9 @@ cd example && flutter pub get && flutter build apk --config-only
 cd android && ./gradlew :patchkite:testDebugUnitTest
 ```
 
-Try changes end to end with the example app (a **release** build on Android) against a local server; see the [quickstart](https://patchkite.github.io/docs/start/quickstart/).
+Try changes end to end with the example app (a **release** build on Android) against a local server; see the [quickstart](https://docs.patchkite.com/start/quickstart/).
 
-- The package hash, signature, diff, and bsdiff logic in `android/` must match the server exactly, as specified in the [package format reference](https://patchkite.github.io/docs/reference/package-format/). The Kotlin tests check it against `test/fixtures`, which are synced from server releases by `scripts/update-fixtures.sh`.
+- The package hash, signature, diff, and bsdiff logic in `android/` must match the server exactly, as specified in the [package format reference](https://docs.patchkite.com/reference/package-format/). The Kotlin tests check it against `test/fixtures`, which are synced from server releases by `scripts/update-fixtures.sh`.
 - Log lines start with `[Patchkite]`; the CLI's `debug` command filters on it.
 
 ## Releases
