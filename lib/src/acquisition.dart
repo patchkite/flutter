@@ -23,8 +23,8 @@ class AcquisitionClient {
       'client_unique_id': config.clientUniqueId,
       // The Android plugin can apply binary patches (much smaller diffs for libapp.so).
       'client_features': 'bsdiff',
-      if (packageHash != null) 'package_hash': packageHash,
-      if (label != null) 'label': label,
+      'package_hash': ?packageHash,
+      'label': ?label,
       if (config.engineRevision != null && config.engineRevision!.isNotEmpty) 'engine_revision': config.engineRevision!,
     }));
     final res = await req.close();
