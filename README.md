@@ -48,7 +48,7 @@ Release updates with the [Patchkite CLI](https://github.com/patchkite/cli), usin
 patchkite release-flutter MyApp-Android android
 ```
 
-Read the [Flutter guide](https://patchkite.github.io/docs/guides/flutter/) for limitations, deployment keys per flavor, code signing, and verification, and the [API reference](https://patchkite.github.io/docs/reference/flutter-api/) for everything else.
+Read the [Flutter guide](https://docs.patchkite.com/guides/flutter/) for limitations, deployment keys per flavor, code signing, and verification, and the [API reference](https://docs.patchkite.com/reference/flutter-api/) for everything else.
 
 Make sure your use complies with Google Play's policy on downloading executable code.
 
